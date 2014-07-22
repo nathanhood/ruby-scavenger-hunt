@@ -22,12 +22,25 @@ class VectorPoint < Vector
   end
 
   def <<(number)
-    array = []
-    self.each do |num|
-      array << num
-    end
-    array << number
-    VectorPoint.[](*array)
+    VectorPoint.elements(self.to_a << number)
+  end
+
+  def self.calculate_angle(vector1, vector2)
+    hyp1 = Math.sqrt(vector1[0]**2 + vector1[1]**2)
+    hyp2 = Math.sqrt(vector2[0]**2 + vector2[1]**2)
+    angle1 = Math.cos(vector1[0] / hyp1)
+    angle2 = Math.cos(vector2[0] / hyp2)
+    radians = angle1 - angle2
+  end
+
+  def calculate_angle(vector)
+    hyp1 = Math.sqrt(self[0]**2 + self[1]**2)
+    hyp2 = Math.sqrt(vector[0]**2 + vector[1]**2)
+
+    angle1 = Math::acos(self[0] / hyp1)
+    angle2 = Math::acos(vector[0] / hyp2)
+    
+    radians = angle1 - angle2
   end
 
 end
