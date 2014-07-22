@@ -21,4 +21,13 @@ class VectorPoint < Vector
     distance = Math.sqrt((vector[0] - self[0])**2 + (vector[1] - self[1])**2)
   end
 
+  def <<(number)
+    array = []
+    self.each do |num|
+      array << num
+    end
+    array << number
+    VectorPoint.[](*array)
+  end
+
 end
