@@ -6,6 +6,7 @@ class ExampleTest < MiniTest::Unit::TestCase
     # This is ran before all the tests. Useful
     # when preparing input data for the objects/methods you
     # wish to test.
+    
   end
 
 end
