@@ -3,6 +3,9 @@ require 'matrix'
 class VectorPoint < Vector
 
   def self.path_length(*vectors)
+    if vectors.length <= 1
+      return nil
+    end
     path_length = 0
     # vectors.sort! { |v1, v2| v1[0] <=> v2[0] }
     vectors.each_index do |i|
