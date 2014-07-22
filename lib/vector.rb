@@ -1,16 +1,11 @@
+require 'matrix'
 
-
-class VectorPoint
+class VectorPoint < Vector
 
   attr_reader :x, :y
 
-  def initialize(x, y)
-    @x = x
-    @y = y
-  end
-
   def distance(vector)
-    distance = Math.sqrt((vector.x - @x)**2 + (vector.y - @y)**2)
+    distance = Math.sqrt((vector[0] - self[0])**2 + (vector[1] - self[1])**2)
   end
 
 end
